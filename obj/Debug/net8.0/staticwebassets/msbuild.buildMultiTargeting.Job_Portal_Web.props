@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Job_Portal_Web.props" />
+</Project>

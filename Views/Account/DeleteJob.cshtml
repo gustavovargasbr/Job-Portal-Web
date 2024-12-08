@@ -1,0 +1,34 @@
+﻿@model JobViewModel
+
+@{
+    ViewData["Title"] = "Delete Job";
+}
+
+<h2>Delete Job</h2>
+
+<h3>Are you sure you want to delete this job?</h3>
+
+<div>
+    <h4>@Model.Title</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Start Date</dt>
+        <dd class="col-sm-10">@Model.StartDate.ToString("d")</dd>
+
+        <dt class="col-sm-2">End Date</dt>
+        <dd class="col-sm-10">@Model.EndDate.ToString("d")</dd>
+
+        <dt class="col-sm-2">Salary</dt>
+        <dd class="col-sm-10">@Model.Salary.ToString("C")</dd>
+
+        @* <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd> *@
+    </dl>
+
+    <form asp-action="DeleteJob" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="JobsIndex" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

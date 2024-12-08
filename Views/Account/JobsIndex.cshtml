@@ -1,0 +1,89 @@
+﻿@model IEnumerable<JobViewModel>
+
+@{
+    ViewData["Title"] = "Jobs List";
+}
+
+<h2 class="text-center my-4">Jobs List</h2>
+<style>
+    .ml-custom {
+        margin-left: 118px; 
+    }
+</style>
+<p>
+    <a asp-action="CreateJob" class="btn btn-primary mb-3 ml-custom">Create New Job</a>
+</p>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card bg-light">               
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Salary</th>
+                                @* <th>Status</th> *@
+                                <th>Company</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var job in Model)
+                            {
+                                <tr>
+                                    <td>@job.Title</td>
+                                    <td>@job.Description</td>
+                                    <td>@job.StartDate.ToString("d")</td>
+                                    <td>@job.EndDate.ToString("d")</td>
+                                    <td>@job.Salary.ToString("C")</td>
+                                    @* <td>@job.Status</td> *@
+                                    <td>@job.CompanyName</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-warning" asp-action="EditJob" asp-controller="Account" asp-route-id="@job.Id">Edit</a>
+                                        <button class="btn btn-sm btn-danger delete-job-btn" data-job-id="@job.Id">Delete</button>
+                                        @* <a class="btn btn-sm btn-danger" asp-action="DeleteJob" asp-controller="Account" asp-route-id="@job.Id">Delete</a> *@
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(document).on('click', '.delete-job-btn', function (e) {
+            e.preventDefault();
+            var companyId = $(this).data('job-id');
+            debugger;
+            if (confirm('Are you sure you want to delete this jobs?')) {
+                $.ajax({
+                    url: 'https://localhost:44318/api/company/jobs/delete/' + companyId,
+                    type: 'DELETE',
+                    success: function (data) {
+                        alert('job deleted successfully!');
+                        location.reload();
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(xhr.responseText);
+                        console.log(status);
+                        console.log(error);
+                        alert('An error occurred while deleting the job.');
+                    }
+                });
+            }
+        });
+    });
+</script>
+

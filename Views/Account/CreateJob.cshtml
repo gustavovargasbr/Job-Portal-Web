@@ -1,0 +1,55 @@
+﻿@model JobViewModel
+
+@{
+    ViewData["Title"] = "Create Job";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white">
+                    <h2 class="text-center mb-0">Create Job</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateJob" method="post">
+                        <div class="mb-3">
+                            <label asp-for="CompanyId" class="form-label">Company</label>
+                            <input hidden asp-for="Companies" class="form-label"></input>
+                            <select asp-for="CompanyId" asp-items="@(new SelectList(Model.Companies, "Id", "CompanyName"))" class="form-select"></select>
+                            <span asp-validation-for="CompanyId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label">Job Title</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label">Job Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="StartDate" class="form-label">Start Date</label>
+                            <input asp-for="StartDate" type="date" class="form-control" />
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="EndDate" class="form-label">End Date</label>
+                            <input asp-for="EndDate" type="date" class="form-control" />
+                            <span asp-validation-for="EndDate" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Salary" class="form-label">Salary</label>
+                            <input asp-for="Salary" class="form-control" />
+                            <span asp-validation-for="Salary" class="text-danger"></span>
+                        </div>                       
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

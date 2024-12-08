@@ -1,0 +1,237 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.search-bar {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+    .search-bar select, .search-bar input {
+        border: none;
+        margin-right: 10px;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+
+        .search-bar input:focus, .search-bar select:focus {
+            outline: none;
+        }
+
+    .search-bar button {
+        background-color: #b9e55b;
+        color: black;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.2s ease;
+    }
+
+        .search-bar button:hover {
+            background-color: #a3d44c;
+        }
+
+/* Job Card Styling */
+.job-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 15px; /* Using 15px as per your original style */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    height: 100%; /* Ensure full height within the column */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between elements for neat layout */
+}
+
+    .job-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 10px rgba(0,0,0,0.2);
+    }
+
+/* Ensure cards are equal height within the grid */
+.row.g-4 > .col-md-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    min-height: 60px; /* Minimum height for the title */
+    max-height: 60px; /* Maximum height for the title to ensure consistent size */
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Add ellipsis if the title is too long */
+    white-space: nowrap; /* Prevent text wrapping to multiple lines */
+}
+
+.apply-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    align-self: flex-start; /* Ensure the button stays aligned properly */
+}
+
+    .apply-btn:hover {
+        background-color: #218838;
+    }
+
+.badge {
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.job-location {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.job-salary {
+    font-weight: bold;
+    color: #000;
+}
+
+.job-listings-header {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.learn-more-link {
+    display: block;
+    margin-top: 5px;
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+    .col-md-3 .job-card {
+        flex-grow: 1; /* Allow the card to fill available space */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.job-details {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.job-meta {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.overview, .job-description, .responsibilities, .skills, .benefits {
+    margin-bottom: 40px;
+}
+
+h4 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.icon-box {
+    background-color: #f0f8f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 18%;
+}
+
+    .icon-box p {
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+    .icon-box small {
+        display: block;
+        color: #888;
+    }
+
+ul {
+    padding-left: 20px;
+}
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+.apply-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .apply-btn:hover {
+        background-color: #218838;
+    }

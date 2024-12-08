@@ -1,0 +1,20 @@
+﻿@model JobViewModel
+
+<div class="container mt-5">
+    <div class="job-details">
+        <div hidden>@Model.Id</div>      
+        <div class="icon-container">
+            <div class="icon-box">
+                <p>Salary</p>
+                <small>@Model.Salary</small>
+            </div>         
+        </div>
+        <div class="job-meta">Posted by @Model.CompanyName</div>
+        <div class="job-title">@Model.Title</div>      
+        <div class="overview">
+            <h4>Description</h4>
+            <p>@Model.Description</p> 
+        </div>
+        <a href="#" class="apply-btn">Apply for this position</a>
+    </div>
+</div>

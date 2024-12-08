@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JobViewModel>
+
+<div class="search-bar">
+    <input type="text" placeholder="What are you looking for?" value="UI Designer">
+    <select>
+        <option value="1" selected>Web Design</option>
+        <option value="2">Development</option>
+        <option value="3">Marketing</option>
+    </select>
+    <button>Search</button>
+</div>
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col-md-12">
+           
+        </div>
+    </div>
+    <div class="row g-4">
+        @foreach (var job in Model)
+        {
+            <div class="col-md-3">
+                <div class="card mb-4">
+                    <div class="card-body">                      
+                        <h5 class="card-title">@job.Title</h5>
+                        <p class="card-text">@job.CompanyName</p>
+                        <p class="card-text">$@job.Salary</p>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                           
+                            <a href="@Url.Action("ApplyJobDetails", "Account", new { id = job.Id })" class="btn btn-primary">Apply</a>
+                        }
+                        else
+                        {
+                           
+                            <a href="@Url.Action("Login", "Account", new { returnUrl = Url.Action("ApplyJobDetails", "Account", new { id = job.Id }) })" class="btn btn-primary">Apply</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
