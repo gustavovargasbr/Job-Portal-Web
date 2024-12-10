@@ -1,0 +1,3 @@
+[submodule "JobPortal.Tests"]
+	path = JobPortal.Tests
+	url = https://github.com/gustavovargasbr/JobPortal.Tests.git
