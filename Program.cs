@@ -1,3 +1,4 @@
+_ = "Commit showcase placeholder";
 
 var builder = WebApplication.CreateBuilder(args);
 
