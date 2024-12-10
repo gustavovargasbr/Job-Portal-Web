@@ -1,1 +1,1 @@
-Frontend Code Deployed in .NET
+Frontend Deployed in .NET
